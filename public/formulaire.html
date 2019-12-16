@@ -6,9 +6,10 @@
     <title></title>
   </head>
   <body>
-    <form class="choisieCompetence" action="/qualifie" method="post">
+    <form id="choisieCompetence" action="/qualifie" method="post">
       <div class="form-example">
         <label for="name">Competance n°1 : </label>
+
         <select id="comp1" name="comp1" class="listeCompetence">
 
         </select>
@@ -37,7 +38,6 @@
   </body>
   <script>
 
- <!--blavla-->
 
     //either use jQuery or AngularJS...
     $(document).ready(function() {
@@ -48,6 +48,23 @@
         success: function(data) {
           (data).forEach(function(d,i) {
             $('.listeCompetence').append('<option value='+d.libelle+'>'+d.libelle+'</option>');
+          });
+        },
+        error: function(x, error) {
+          console.log(error);
+        }
+      });
+    });
+
+    $("#choisieCompetence").submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+        method: 'GET',
+        url: 'competences/',
+        dataType: 'json',
+        success: function(data) {
+          (data).forEach(function(d,i) {
+            $('.listeCompetence').append('<option values='+d.libelle+'>'+d.libelle+'</option>');
           });
         },
         error: function(x, error) {
