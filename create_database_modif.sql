@@ -9,7 +9,8 @@ DROP TABLE IF EXISTS Postes;
 
 CREATE TABLE Postes (
 	id INTEGER PRIMARY KEY,
-	libelle TEXT		
+	libelle TEXT
+
 );
 
 INSERT INTO Postes(id,libelle) VALUES
@@ -17,74 +18,15 @@ INSERT INTO Postes(id,libelle) VALUES
 (2,'Responsable production'),
 (3,'Directeur Production'),
 (4,'Directrice Générale'),
-(5,'Hôtesse d''accueil'),
-(6,'Assistante ADV'),
-(7,'Directeur commercial'),
-(8,'Assistant Commercial'),
-(9,'Responsable SAV'),
-(10,'Assistant technique'),
-(11,'Ingénieur maintenance'),
-(12,'Ingenieur support'),
-(13,'Responsable ADV'),
-(14,'Responsable commercial'),
-(15,'Chef de produit'),
-(16,'Chef de marché'),
-(17,'Chargé d''étude marketing'),
-(18,'Responsable marketing'),
-(19,'Délégué pharmaceutique'),
-(20,'Consultant ingénierie laboratoire'),
-(21,'Responsable grands comptes'),
-(22,'Vendeurs grands comptes'),
-(23,'Vendeurs'),
-(24,'Acheteur'),
-(25,'Directeur achats'),
-(26,'Magasinier'),
-(27,'Responsable de magasin'),
-(28,'Manutentionnaire'),
-(29,'Responsable supply Chain'), 
-(30,'Agent d''hygiène'),
-(31,'Conducteur de ligne conditionnement'),
-(32,'Conducteur de ligne production'),
-(33,'Opérateur de production'),
-(34,'Agent de nettoyage'),
-(35,'Opérateur machine'),
-(36,'Chef d''atelier'),
-(37,'Responsable fabrication'),
-(38,'Ingénieur process'),
-(39,'Technicien industrialisation'),
-(40,'Agent de fabrication'),
-(41,'Responsable d''analyse'),
-(42,'Laborantin'),
-(43,'Responsable de projet R&D'),
-(44,'Responsable industrialisation'),
-(45,'Technicien de développement packaging'),
-(46,'Ingénieur méthodes'),
-(47,'Ingénieur développement packaging'),
-(48,'Technicien polyvalent'),
-(49,'Directeur R&D'),
-(50,'Chercheur'),
-(51,'Responsable formation'),
-(52,'Responsable RH'),
-(53,'Directeur RH'),
-(54,'Chargé de recrutement'), 
-(55,'Responsable paie et social'),
-(56,'Responsable communication'),
-(57,'Assistant RH'),
-(58,'Comptable'),
-(59,'Contrôleur de gestion'),
-(60,'Directeur financier'),
-(61,'Responsable support informatique'),
-(62,'Directeur informatique'),
-(63,'Administrateur informatique'),
-(64,'Développeur informatique');
+(5,'Hôtesse d''accueil');
 
 
---  ____                  _               
--- / ___|  ___ _ ____   _(_) ___ ___  ___ 
+--  ____                  _
+-- / ___|  ___ _ ____   _(_) ___ ___  ___
 -- \___ \ / _ \ '__\ \ / / |/ __/ _ \/ __|
 --  ___) |  __/ |   \ V /| | (_|  __/\__ \
 -- |____/ \___|_|    \_/ |_|\___\___||___/
--- 
+--
 DROP TABLE IF EXISTS Services;
 
 CREATE TABLE Services (
@@ -107,12 +49,12 @@ INSERT INTO Services(id,libelle) VALUES
 (11,"Finance"),
 (12,"Informatique");
 
---  ____                                      _     
--- |  _ \ ___ _ __ ___  ___  _ __  _ __   ___| |___ 
+--  ____                                      _
+-- |  _ \ ___ _ __ ___  ___  _ __  _ __   ___| |___
 -- | |_) / _ \ '__/ __|/ _ \| '_ \| '_ \ / _ \ / __|
 -- |  __/  __/ |  \__ \ (_) | | | | | | |  __/ \__ \
 -- |_|   \___|_|  |___/\___/|_| |_|_| |_|\___|_|___/
---                                                  
+--
 DROP TABLE IF EXISTS Personnels;
 
 CREATE TABLE Personnels (
@@ -169,87 +111,87 @@ INSERT INTO Personnels (
 	variable_annuel_brut_2019,
 	primes,
 	annee_dernier_entretien_professionnel,
-	annee_dernier_entretien_individuel) 
+	annee_dernier_entretien_individuel)
 VALUES
 (1,'DUMONT','Bernard','13 rue des Mésanges, 81000 Albi','Française','1969-01-12','M',0,1,'6B',2,'1989-06-15','2031-12-28','','','','','','',24272,'',25000,'',5,2018,2019),
 (2,'ROY','Louis','8 rue de l''alouette, 81000 Albi','Française','1957-05-03','M',0,2,'8B',3,'1978-06-16','2020-04-17','','','','','','',40385,'',42000,'',5,2018,2019),
 (3,'LEMENT','Jean','112 avenue des hirondelles, 81200 Lisle su Tarn','Française','1965-04-13','M',1,3,'10',4,'1990-06-17','2028-03-28','','','','','','',63107,'',65000,'',5,2018,2019),
 (4,'MARTIN','Eliane','45 rue henri desbals, 82300 Halebert','Française','1958-01-16','F',1,4,'11','','1988-06-18','2020-12-31','','','','','','',97087,'',100000,'',5,2018,2019),
 (5,'DETROIT','Océane','72 chemin du tortiot, 82300 Halebert','Française','1995-07-15','F',2,5,'1C',59,'2015-06-19','2058-06-29','','','','','','',19048,'',20000,'',5,2018,2019),
-(6,'ALBERT','Marie','18 route de Castres, 82150 Girons','Française','1978-06-25','F',3,6,'1C',15,'2003-06-20','2041-06-09','','','','','','',21359,5,22000,5,5,2018,2019),
-(7,'JAMON','Franck','16 avenue JJ Rousseau, 81000 Albi','Française','1960-08-06','M',1,7,'10',4,'2000-06-21','2023-07-22','','','','','','',72727,20,80000,20,5,2018,2019),
-(8,'PANTIN','Mila','18 impasse du loup, 81450 Darton','Française','1990-08-07','F',3,8,'3C',15,'2010-06-22','2053-07-22','','','','','','',21359,5,22000,5,5,2018,2019),
-(9,'PRISME','Hugo','151 avenue Matisse, 81000 Albi','Française','1995-08-08','M',3,8,'3C',15,'2017-06-23','2058-07-23','1','','','1','','',19266,5,21000,5,5,2018,2019),
-(10,'ALIBERT','Manon','11 rue des martyrs, 81000 Albi','Française','1978-08-09','F',4,9,'7B',7,'2005-06-24','2041-07-24','','','','','04-mai','',33645,'',36000,'',5,2018,2019),
-(11,'CANTER','Jérémy','13 rue dufour, 81000 Albi','Française','1991-08-10','M',4,10,'2C',10,'2013-06-25','2054-07-25','','','','','','',22330,'',23000,'',5,2018,2019),
-(12,'AFFREY','Léa','58 rue des alouettes, 812350 Gorges','Française','1984-08-11','F',4,11,'5A',10,'2011-06-26','2047-07-27','','','','','04-mai','',34951,'',36000,'',5,2018,2019),
-(13,'BERTRAND','Matthieu','72 avenue des minimes, 31000 Toulouse','Française','1982-08-12','M',4,12,'5B',10,'1999-06-27','2045-07-27','','','','','','',40777,'',42000,'',5,2018,2019),
-(14,'ALIL','Yannis','15 impasse de la revolution, 81450 Haletarde','Française','1975-08-13','M',4,13,'7A',7,'1997-06-28','2038-07-28','','','','','','',50000,20,55000,20,5,2018,2019),
-(15,'SMITH','Jane','387 chemin du renard, 81659 Farce','Française','1973-08-14','F',5,14,'7B',7,'2003-06-29','2036-07-29','','','','','','',58252,20,60000,20,5,2018,2019),
-(16,'CAZALS','Ludivine','45 boulevard farouette, 81000 Albi','Française','1981-08-15','F',6,15,'5A',19,'2008-06-30','2044-07-30','','','','','04-mai','',36893,'',38000,'',5,2018,2019),
-(17,'CAILLIER','Antoine','13 rue des Remblas, 81000 Albi','Française','1986-08-16','M',6,16,'4C',19,'2015-07-01','2049-07-31','','','','','','',33981,'',35000,'',5,2018,2019),
-(18,'TISSERANT','Fleur','8 rue de la canette, 81000 Albi','Française','1993-08-17','F',6,17,'3C',19,'2019-07-02','2056-08-01','','','','','','',27778,'',30000,'',5,'',2019),
+(6,'ALBERT','Marie','18 route de Castres, 82150 Girons','Française','1978-06-25','F',3,4,'1C',15,'2003-06-20','2041-06-09','','','','','','',21359,5,22000,5,5,2018,2019),
+(7,'JAMON','Franck','16 avenue JJ Rousseau, 81000 Albi','Française','1960-08-06','M',1,1,'10',4,'2000-06-21','2023-07-22','','','','','','',72727,20,80000,20,5,2018,2019),
+(8,'PANTIN','Mila','18 impasse du loup, 81450 Darton','Française','1990-08-07','F',3,2,'3C',15,'2010-06-22','2053-07-22','','','','','','',21359,5,22000,5,5,2018,2019),
+(9,'PRISME','Hugo','151 avenue Matisse, 81000 Albi','Française','1995-08-08','M',3,2,'3C',15,'2017-06-23','2058-07-23','1','','','1','','',19266,5,21000,5,5,2018,2019),
+(10,'ALIBERT','Manon','11 rue des martyrs, 81000 Albi','Française','1978-08-09','F',4,4,'7B',7,'2005-06-24','2041-07-24','','','','','04-mai','',33645,'',36000,'',5,2018,2019),
+(11,'CANTER','Jérémy','13 rue dufour, 81000 Albi','Française','1991-08-10','M',4,1,'2C',10,'2013-06-25','2054-07-25','','','','','','',22330,'',23000,'',5,2018,2019),
+(12,'AFFREY','Léa','58 rue des alouettes, 812350 Gorges','Française','1984-08-11','F',4,4,'5A',10,'2011-06-26','2047-07-27','','','','','04-mai','',34951,'',36000,'',5,2018,2019),
+(13,'BERTRAND','Matthieu','72 avenue des minimes, 31000 Toulouse','Française','1982-08-12','M',4,1,'5B',10,'1999-06-27','2045-07-27','','','','','','',40777,'',42000,'',5,2018,2019),
+(14,'ALIL','Yannis','15 impasse de la revolution, 81450 Haletarde','Française','1975-08-13','M',4,3,'7A',7,'1997-06-28','2038-07-28','','','','','','',50000,20,55000,20,5,2018,2019),
+(15,'SMITH','Jane','387 chemin du renard, 81659 Farce','Française','1973-08-14','F',5,4,'7B',7,'2003-06-29','2036-07-29','','','','','','',58252,20,60000,20,5,2018,2019),
+(16,'CAZALS','Ludivine','45 boulevard farouette, 81000 Albi','Française','1981-08-15','F',6,5,'5A',19,'2008-06-30','2044-07-30','','','','','04-mai','',36893,'',38000,'',5,2018,2019),
+(17,'CAILLIER','Antoine','13 rue des Remblas, 81000 Albi','Française','1986-08-16','M',6,1,'4C',19,'2015-07-01','2049-07-31','','','','','','',33981,'',35000,'',5,2018,2019),
+(18,'TISSERANT','Fleur','8 rue de la canette, 81000 Albi','Française','1993-08-17','F',6,1,'3C',19,'2019-07-02','2056-08-01','','','','','','',27778,'',30000,'',5,'',2019),
 (19,'BOUTET','Thibault','112 avenue des hommes, 81200 Lisle su Tarn','Française','1975-08-18','M',6,18,'8A',7,'2002-07-03','2038-08-02','','','','','','',46602,'',48000,'',5,2018,2019),
-(20,'HORTEGA','Maria','45 rue henri rousseau, 82300 Halebert','Française','1972-08-19','F',5,19,'3C',15,'1995-07-04','2035-08-04','','','','','','',28155,'',29000,'',5,2018,2019),
-(21,'FILIBERT','Basile','72 chemin du calaes, 82300 Halebert','Française','1997-08-20','M',5,19,'3A',15,'2018-07-05','2060-08-04','','','','','','',18462,'',24000,'',5,2018,2019),
-(22,'FREMONT','Théo','18 route de toulouse, 82150 Girons','Française','1993-08-21','M',5,19,'3B',15,'2015-07-06','2056-08-05','','','','','','',24299,'',26000,'',5,2018,2019),
-(23,'DAVID','Stéphane','16 avenue marc enters, 81000 Albi','Française','1979-08-22','M',5,20,'4C',15,'2007-07-07','2042-08-06','','','','','','',36893,'',38000,'',5,2018,2019),
-(24,'MALOUIN','Louise','18 impasse du canard, 81450 Darton','Française','1970-08-23','F',5,21,'8B',15,'2012-07-08','2033-08-07','','','','','','',48544,20,50000,20,5,2018,2019),
-(25,'BETON','Emma','151 avenue Picasso, 81000 Albi','Française','1984-08-24','F',5,22,'5C',24,'2010-07-09','2047-08-09','','','','','','',32039,20,33000,20,5,2018,2019),
-(26,'ZIDANE','Zinedine','11 rue des enfants, 81000 Albi','Française','1987-08-25','M',5,23,'4A',7,'2010-07-10','2050-08-09','','','','','','',27184,15,28000,15,5,2018,2019),
-(27,'NTAMAK','Emile','13 rue Alain, 81000 Albi','Française','1995-08-26','M',5,23,'4A',7,'2017-07-11','2058-08-10','1','','','1','','',23333,15,28000,15,5,2018,2019),
-(28,'BLANCO','Serge','58 rue des Gironcles, 812350 Gorges','Française','1982-08-27','M',7,24,'4C',29,'2009-07-12','2045-08-11','','','','','','',26667,'',32000,'',5,2018,2019),
-(29,'MBAPPE','Kilian','72 avenue des Parmes, 31000 Toulouse','Française','1970-08-28','M',1,25,'9B',4,'2000-07-13','2033-08-12','','','','','','',58252,'',60000,'',5,2018,2019),
-(30,'PARKER','Tony','15 impasse de la Passion, 81450 Haletarde','Française','1994-08-29','M',8,26,'2C',32,'2014-07-14','2057-08-13','','','','','','',19417,'',20000,'',5,2018,2019),
-(31,'ASTER','Béatrice','387 chemin du Pantin, 81659 Farce','Française','1969-08-30','F',8,26,'3C',32,'1994-07-15','2032-08-14','','','','','','',22018,'',24000,'',5,2018,2019),
-(32,'ASTOUL','Laure','45 boulevard Simon, 81000 Albi','Française','1968-08-31','F',8,27,'7A',35,'1988-07-16','2031-08-16','','','','','','',24272,'',25000,'',5,2018,2019),
-(33,'GIROUX','Fabien','45 boulevard des bottes, 81000 Albi','Française','1999-09-01','M',8,28,'2A',32,'2019-07-17','2062-08-16','','','','','','',17476,'',18000,'',5,'',2019),
-(34,'NADAL','Rafael','13 rue des animaux, 81000 Albi','Française','1978-09-02','M',8,29,'3B',2,'2006-07-18','2041-08-17','','','','','','',53398,'',55000,'',5,2018,2019),
-(35,'NOAH','Yannick','8 rue de la Paire, 81000 Albi','Française','2000-09-03','M',8,28,'2A',32,'2018-07-19','2063-08-19','','','','','','',17476,'',18000,'',5,2018,2019),
-(36,'DION','Céline','112 avenue des femmes, 81200 Lisle su Tarn','Française','1979-09-04','F',0,30,'2B',42,'2004-07-20','2042-08-19','','','','','','',17476,'',18000,'',5,2018,2019),
-(37,'ALI','Mohammed','45 rue Jean de la fontaine, 82300 Halebert','Française','1975-09-05','M',0,31,'2C',42,'1997-07-21','2038-08-20','','','','','','',19417,'',20000,'',5,2018,2019),
-(38,'PITT','Brad','72 chemin du port, 82300 Halebert','Française','1972-09-06','M',0,32,'3A',42,'1992-07-22','2035-08-22','','','','','','',22330,'',23000,'',5,2018,2019),
-(39,'JOLIE','Angelina','18 route de Montauban, 82150 Girons','Française','1980-09-07','F',0,33,'3C',42,'192001-07-23','2043-08-23','','','','','','',18447,'',19000,'',5,2018,2019),
-(40,'MCQUEEN','Steve','16 avenue marc Lavoine, 81000 Albi','Française','1983-09-08','M',0,34,'2C',42,'2005-07-24','2046-08-23','','','','','','',17476,'',18000,'',5,2018,2019),
-(41,'BRANDO','Marlon','18 impasse du Jardin, 81450 Darton','Française','1974-09-09','M',0,35,'3B',42,'1998-07-25','2037-08-24','','','','','','',19417,'',20000,'',5,2018,2019),
-(42,'JAOUI','Agnès','151 avenue Dali, 81000 Albi','Française','1969-09-10','F',0,36,'5A',43,'1988-07-26','2032-08-25','','','','','','',24272,'',25000,'',5,2018,2019),
-(43,'DENEUVE','Catherine','11 rue des Mères, 81000 Albi','Française','1976-09-11','F',0,37,'7B',3,'2002-07-27','2039-08-27','','','','','','',43689,'',45000,'',5,2018,2019),
-(44,'ROBIN','Muriel','13 rue Bertrand, 81000 Albi','Française','1988-09-12','F',0,38,'6A',42,'2015-07-28','2051-08-28','','','','','','',40777,'',42000,'',5,2018,2019),
-(45,'FORESTI','Florence','58 rue des tournesols, 812350 Gorges','Française','1983-09-13','F',0,39,'4B',42,'2002-07-29','2046-08-28','','','','','','',21359,'',22000,'',5,2018,2019),
-(46,'INGALLS','Charles','72 avenue des Herbiers, 31000 Toulouse','Française','1971-09-14','M',0,40,'3C',42,'1990-07-30','2034-08-29','','','','','','',19417,'',20000,'',5,2018,2019),
-(47,'FRANKLIN','Aretha','15 impasse de la Lune, 81450 Haletarde','Française','1979-09-15','F',9,41,'7B',49,'2002-07-31','2042-08-30','','','','','','',44660,'',46000,'',5,2018,2019),
-(48,'JOPLIN','Janis','387 chemin du Papillon, 81659 Farce','Française','1986-09-16','F',9,42,'4A',49,'2008-08-01','2049-08-31','','','','','','',28155,'',29000,'',5,2018,2019),
-(49,'LAGUILLIER','Arlette','45 boulevard André le breton, 81000 Albi','Française','1977-09-17','F',9,43,'7B',56,'2005-08-02','2040-09-01','','','','','','',53398,'',55000,'',5,2018,2019),
-(50,'DE MONTESPAN','Aurore','45 rue du panthéon, 82300 Halebert','Française','1974-09-18','F',9,44,'8A',56,'2001-08-03','2037-09-02','','','','','','',58252,'',60000,'',5,2018,2019),
-(51,'OLPON','Cécile','72 chemin du Mont, 82300 Halebert','Française','1982-09-19','F',9,45,'4A',50,'2000-08-04','2045-09-03','','','','','','',21359,'',22000,'',5,2018,2019),
-(52,'BILLARD','Isabelle','18 route de Paris, 82150 Girons','Française','1982-09-20','F',9,46,'5C',50,'2008-08-05','2045-09-04','','','','','','',43689,'',45000,'',5,2018,2019),
-(53,'TARTINE','Laura','16 avenue René, 81000 Albi','Française','1986-09-21','F',9,47,'5B',50,'2011-08-06','2049-09-05','','','','','','',41748,'',43000,'',5,2018,2019),
-(54,'DALLON','Marie-Louise','18 impasse du Parc, 81450 Darton','Française','1988-09-22','F',9,47,'5A',50,'2013-08-07','2051-09-07','','','','','','',40777,'',42000,'',5,2018,2019),
-(55,'STEPRE','Tony','151 avenue Cézanne, 81000 Albi','Française','1973-09-23','M',9,48,'3C',50,'1993-08-08','2036-09-07','','','','','04-mai','',19417,'',20000,'',5,2018,2019),
-(56,'PALMOURDE','Christian','11 rue des Pères, 81000 Albi','Française','1969-09-24','M',1,49,'9A',4,'1999-08-09','2032-09-08','','','','','','',63107,'',65000,'',5,2018,2019),
-(57,'CARRON','Fabrice','13 rue Gérard, 81000 Albi','Française','1992-09-25','M',9,50,'6C',49,'2017-08-10','2055-09-10','','','','','','',34951,'',36000,'',5,2018,2019),
-(58,'GOURLAOUEN','Gérard','58 rue des Avions, 812350 Gorges','Française','1982-09-26','M',10,51,'7A',60,'2007-08-11','2045-09-10','','','','','','',29126,'',30000,'',5,2018,2019),
-(59,'MAGALY','Lou','72 avenue des Fous, 31000 Toulouse','Française','1975-09-27','F',10,52,'7B',60,'2005-08-12','2038-09-11','','','','','','',38835,'',40000,'',5,2018,2019),
-(60,'RIZOUL','Natacha','15 impasse de la Vie, 81450 Haletarde','Française','1965-09-28','F',1,53,'10',4,'1987-08-13','2028-09-12','','','','','','',63107,'',65000,'',5,2018,2019),
-(61,'PESTOUL','Fanny','387 chemin du Coléoptère, 81659 Farce','Française','1994-09-29','F',10,54,'3C',59,'2016-08-14','2057-09-13','','','','','','',31068,'',32000,'',5,2018,2019),
-(62,'QUAND','Françoise','45 boulevard Fabrice 81000 Albi','Française','1971-09-30','F',10,55,'8B',60,'1997-08-15','2034-09-14','','','','','','',38835,'',40000,'',5,2018,2019),
-(63,'MARMILLE','Estelle','45 rue stéphane bertoli, 82300 Halebert','Française','1989-10-01','F',10,56,'7A',60,'2014-08-16','2052-09-15','','','','','','',33019,'',35000,'',5,2018,2019),
-(64,'OUST','Isabelle','72 chemin du caillou, 82300 Halebert','Française','1991-10-02','F',10,57,'3A',59,'2014-08-17','2054-09-16','','','','','','',23301,'',24000,'',5,2018,2019),
-(65,'FUTIL','Valérie','18 route de Londres, 82150 Girons','Française','1969-10-03','F',11,58,'5C',67,'1994-08-18','2032-09-17','','','','','04-mai','',40777,'',42000,'',5,2018,2019),
-(66,'LAMBERT','Elodie','16 avenue Gillette, 81000 Albi','Française','1972-10-04','F',11,59,'6B',67,'1997-08-19','2035-09-19','','','','','','',44660,'',46000,'',5,2018,2019),
-(67,'PASCAL','Edmond','18 impasse du Trottoir, 81450 Darton','Française','1972-10-05','M',1,60,'9A',4,'2008-08-20','2035-09-20','','','','','','',63107,'',65000,'',5,2018,2019),
-(68,'QUENTIN','Marc','151 avenue Van gogh, 81000 Albi','Française','1975-10-06','M',12,61,'8A',69,'2005-08-21','2038-09-20','','','','','','',42857,'',45000,'',5,2018,2019),
-(69,'TALBOT','Henri','11 rue des Frères, 81000 Albi','Française','1970-10-07','M',1,62,'9A',4,'2010-08-22','2033-09-21','','','','','','',53398,'',55000,'',5,2018,2019),
-(70,'AUDEBERT','Pierre','13 rue Farceur, 81000 Albi','Française','1979-10-08','M',12,63,'4C',69,'2009-08-23','2042-09-22','','','','','','',25243,'',26000,'',5,2018,2019),
-(71,'DARMON','Esteban','58 rue des Abricots, 812350 Gorges','Française','1988-10-09','M',12,64,'6A',69,'2014-08-24','2051-09-24','','','','','','',38889,'',42000,'',5,2018,2019);
-  
-  
---  _____                          _   _                 
--- |  ___|__  _ __ _ __ ___   __ _| |_(_) ___  _ __  ___ 
+(20,'HORTEGA','Maria','45 rue henri rousseau, 82300 Halebert','Française','1972-08-19','F',5,1,'3C',15,'1995-07-04','2035-08-04','','','','','','',28155,'',29000,'',5,2018,2019),
+(21,'FILIBERT','Basile','72 chemin du calaes, 82300 Halebert','Française','1997-08-20','M',5,1,'3A',15,'2018-07-05','2060-08-04','','','','','','',18462,'',24000,'',5,2018,2019),
+(22,'FREMONT','Théo','18 route de toulouse, 82150 Girons','Française','1993-08-21','M',5,1,'3B',15,'2015-07-06','2056-08-05','','','','','','',24299,'',26000,'',5,2018,2019),
+(23,'DAVID','Stéphane','16 avenue marc enters, 81000 Albi','Française','1979-08-22','M',5,2,'4C',15,'2007-07-07','2042-08-06','','','','','','',36893,'',38000,'',5,2018,2019),
+(24,'MALOUIN','Louise','18 impasse du canard, 81450 Darton','Française','1970-08-23','F',5,2,'8B',15,'2012-07-08','2033-08-07','','','','','','',48544,20,50000,20,5,2018,2019),
+(25,'BETON','Emma','151 avenue Picasso, 81000 Albi','Française','1984-08-24','F',5,2,'5C',24,'2010-07-09','2047-08-09','','','','','','',32039,20,33000,20,5,2018,2019),
+(26,'ZIDANE','Zinedine','11 rue des enfants, 81000 Albi','Française','1987-08-25','M',5,3,'4A',7,'2010-07-10','2050-08-09','','','','','','',27184,15,28000,15,5,2018,2019),
+(27,'NTAMAK','Emile','13 rue Alain, 81000 Albi','Française','1995-08-26','M',5,3,'4A',7,'2017-07-11','2058-08-10','1','','','1','','',23333,15,28000,15,5,2018,2019),
+(28,'BLANCO','Serge','58 rue des Gironcles, 812350 Gorges','Française','1982-08-27','M',7,4,'4C',29,'2009-07-12','2045-08-11','','','','','','',26667,'',32000,'',5,2018,2019),
+(29,'MBAPPE','Kilian','72 avenue des Parmes, 31000 Toulouse','Française','1970-08-28','M',1,5,'9B',4,'2000-07-13','2033-08-12','','','','','','',58252,'',60000,'',5,2018,2019),
+(30,'PARKER','Tony','15 impasse de la Passion, 81450 Haletarde','Française','1994-08-29','M',8,2,'2C',32,'2014-07-14','2057-08-13','','','','','','',19417,'',20000,'',5,2018,2019),
+(31,'ASTER','Béatrice','387 chemin du Pantin, 81659 Farce','Française','1969-08-30','F',8,2,'3C',32,'1994-07-15','2032-08-14','','','','','','',22018,'',24000,'',5,2018,2019),
+(32,'ASTOUL','Laure','45 boulevard Simon, 81000 Albi','Française','1968-08-31','F',8,2,'7A',35,'1988-07-16','2031-08-16','','','','','','',24272,'',25000,'',5,2018,2019),
+(33,'GIROUX','Fabien','45 boulevard des bottes, 81000 Albi','Française','1999-09-01','M',8,2,'2A',32,'2019-07-17','2062-08-16','','','','','','',17476,'',18000,'',5,'',2019),
+(34,'NADAL','Rafael','13 rue des animaux, 81000 Albi','Française','1978-09-02','M',8,2,'3B',2,'2006-07-18','2041-08-17','','','','','','',53398,'',55000,'',5,2018,2019),
+(35,'NOAH','Yannick','8 rue de la Paire, 81000 Albi','Française','2000-09-03','M',8,2,'2A',32,'2018-07-19','2063-08-19','','','','','','',17476,'',18000,'',5,2018,2019),
+(36,'DION','Céline','112 avenue des femmes, 81200 Lisle su Tarn','Française','1979-09-04','F',0,3,'2B',42,'2004-07-20','2042-08-19','','','','','','',17476,'',18000,'',5,2018,2019),
+(37,'ALI','Mohammed','45 rue Jean de la fontaine, 82300 Halebert','Française','1975-09-05','M',0,3,'2C',42,'1997-07-21','2038-08-20','','','','','','',19417,'',20000,'',5,2018,2019),
+(38,'PITT','Brad','72 chemin du port, 82300 Halebert','Française','1972-09-06','M',0,3,'3A',42,'1992-07-22','2035-08-22','','','','','','',22330,'',23000,'',5,2018,2019),
+(39,'JOLIE','Angelina','18 route de Montauban, 82150 Girons','Française','1980-09-07','F',0,3,'3C',42,'192001-07-23','2043-08-23','','','','','','',18447,'',19000,'',5,2018,2019),
+(40,'MCQUEEN','Steve','16 avenue marc Lavoine, 81000 Albi','Française','1983-09-08','M',0,3,'2C',42,'2005-07-24','2046-08-23','','','','','','',17476,'',18000,'',5,2018,2019),
+(41,'BRANDO','Marlon','18 impasse du Jardin, 81450 Darton','Française','1974-09-09','M',0,5,'3B',42,'1998-07-25','2037-08-24','','','','','','',19417,'',20000,'',5,2018,2019),
+(42,'JAOUI','Agnès','151 avenue Dali, 81000 Albi','Française','1969-09-10','F',0,3,'5A',43,'1988-07-26','2032-08-25','','','','','','',24272,'',25000,'',5,2018,2019),
+(43,'DENEUVE','Catherine','11 rue des Mères, 81000 Albi','Française','1976-09-11','F',0,3,'7B',3,'2002-07-27','2039-08-27','','','','','','',43689,'',45000,'',5,2018,2019),
+(44,'ROBIN','Muriel','13 rue Bertrand, 81000 Albi','Française','1988-09-12','F',0,3,'6A',42,'2015-07-28','2051-08-28','','','','','','',40777,'',42000,'',5,2018,2019),
+(45,'FORESTI','Florence','58 rue des tournesols, 812350 Gorges','Française','1983-09-13','F',0,3,'4B',42,'2002-07-29','2046-08-28','','','','','','',21359,'',22000,'',5,2018,2019),
+(46,'INGALLS','Charles','72 avenue des Herbiers, 31000 Toulouse','Française','1971-09-14','M',0,4,'3C',42,'1990-07-30','2034-08-29','','','','','','',19417,'',20000,'',5,2018,2019),
+(47,'FRANKLIN','Aretha','15 impasse de la Lune, 81450 Haletarde','Française','1979-09-15','F',9,1,'7B',49,'2002-07-31','2042-08-30','','','','','','',44660,'',46000,'',5,2018,2019),
+(48,'JOPLIN','Janis','387 chemin du Papillon, 81659 Farce','Française','1986-09-16','F',9,2,'4A',49,'2008-08-01','2049-08-31','','','','','','',28155,'',29000,'',5,2018,2019),
+(49,'LAGUILLIER','Arlette','45 boulevard André le breton, 81000 Albi','Française','1977-09-17','F',9,4,'7B',56,'2005-08-02','2040-09-01','','','','','','',53398,'',55000,'',5,2018,2019),
+(50,'DE MONTESPAN','Aurore','45 rue du panthéon, 82300 Halebert','Française','1974-09-18','F',9,4,'8A',56,'2001-08-03','2037-09-02','','','','','','',58252,'',60000,'',5,2018,2019),
+(51,'OLPON','Cécile','72 chemin du Mont, 82300 Halebert','Française','1982-09-19','F',9,4,'4A',50,'2000-08-04','2045-09-03','','','','','','',21359,'',22000,'',5,2018,2019),
+(52,'BILLARD','Isabelle','18 route de Paris, 82150 Girons','Française','1982-09-20','F',9,4,'5C',50,'2008-08-05','2045-09-04','','','','','','',43689,'',45000,'',5,2018,2019),
+(53,'TARTINE','Laura','16 avenue René, 81000 Albi','Française','1986-09-21','F',9,47,'5B',5,'2011-08-06','2049-09-05','','','','','','',41748,'',43000,'',5,2018,2019),
+(54,'DALLON','Marie-Louise','18 impasse du Parc, 81450 Darton','Française','1988-09-22','F',9,5,'5A',50,'2013-08-07','2051-09-07','','','','','','',40777,'',42000,'',5,2018,2019),
+(55,'STEPRE','Tony','151 avenue Cézanne, 81000 Albi','Française','1973-09-23','M',9,4,'3C',50,'1993-08-08','2036-09-07','','','','','04-mai','',19417,'',20000,'',5,2018,2019),
+(56,'PALMOURDE','Christian','11 rue des Pères, 81000 Albi','Française','1969-09-24','M',1,4,'9A',4,'1999-08-09','2032-09-08','','','','','','',63107,'',65000,'',5,2018,2019),
+(57,'CARRON','Fabrice','13 rue Gérard, 81000 Albi','Française','1992-09-25','M',9,5,'6C',4,'2017-08-10','2055-09-10','','','','','','',34951,'',36000,'',5,2018,2019),
+(58,'GOURLAOUEN','Gérard','58 rue des Avions, 812350 Gorges','Française','1982-09-26','M',1,51,'7A',60,'2007-08-11','2045-09-10','','','','','','',29126,'',30000,'',5,2018,2019),
+(59,'MAGALY','Lou','72 avenue des Fous, 31000 Toulouse','Française','1975-09-27','F',1,52,'7B',60,'2005-08-12','2038-09-11','','','','','','',38835,'',40000,'',5,2018,2019),
+(60,'RIZOUL','Natacha','15 impasse de la Vie, 81450 Haletarde','Française','1965-09-28','F',1,5,'10',4,'1987-08-13','2028-09-12','','','','','','',63107,'',65000,'',5,2018,2019),
+(61,'PESTOUL','Fanny','387 chemin du Coléoptère, 81659 Farce','Française','1994-09-29','F',10,5,'3C',59,'2016-08-14','2057-09-13','','','','','','',31068,'',32000,'',5,2018,2019),
+(62,'QUAND','Françoise','45 boulevard Fabrice 81000 Albi','Française','1971-09-30','F',10,5,'8B',60,'1997-08-15','2034-09-14','','','','','','',38835,'',40000,'',5,2018,2019),
+(63,'MARMILLE','Estelle','45 rue stéphane bertoli, 82300 Halebert','Française','1989-10-01','F',10,5,'7A',60,'2014-08-16','2052-09-15','','','','','','',33019,'',35000,'',5,2018,2019),
+(64,'OUST','Isabelle','72 chemin du caillou, 82300 Halebert','Française','1991-10-02','F',10,5,'3A',59,'2014-08-17','2054-09-16','','','','','','',23301,'',24000,'',5,2018,2019),
+(65,'FUTIL','Valérie','18 route de Londres, 82150 Girons','Française','1969-10-03','F',11,5,'5C',67,'1994-08-18','2032-09-17','','','','','04-mai','',40777,'',42000,'',5,2018,2019),
+(66,'LAMBERT','Elodie','16 avenue Gillette, 81000 Albi','Française','1972-10-04','F',11,5,'6B',67,'1997-08-19','2035-09-19','','','','','','',44660,'',46000,'',5,2018,2019),
+(67,'PASCAL','Edmond','18 impasse du Trottoir, 81450 Darton','Française','1972-10-05','M',1,1,'9A',4,'2008-08-20','2035-09-20','','','','','','',63107,'',65000,'',5,2018,2019),
+(68,'QUENTIN','Marc','151 avenue Van gogh, 81000 Albi','Française','1975-10-06','M',12,1,'8A',69,'2005-08-21','2038-09-20','','','','','','',42857,'',45000,'',5,2018,2019),
+(69,'TALBOT','Henri','11 rue des Frères, 81000 Albi','Française','1970-10-07','M',1,2,'9A',4,'2010-08-22','2033-09-21','','','','','','',53398,'',55000,'',5,2018,2019),
+(70,'AUDEBERT','Pierre','13 rue Farceur, 81000 Albi','Française','1979-10-08','M',12,3,'4C',69,'2009-08-23','2042-09-22','','','','','','',25243,'',26000,'',5,2018,2019),
+(71,'DARMON','Esteban','58 rue des Abricots, 812350 Gorges','Française','1988-10-09','M',12,4,'6A',69,'2014-08-24','2051-09-24','','','','','','',38889,'',42000,'',5,2018,2019);
+
+
+--  _____                          _   _
+-- |  ___|__  _ __ _ __ ___   __ _| |_(_) ___  _ __  ___
 -- | |_ / _ \| '__| '_ ` _ \ / _` | __| |/ _ \| '_ \/ __|
 -- |  _| (_) | |  | | | | | | (_| | |_| | (_) | | | \__ \
 -- |_|  \___/|_|  |_| |_| |_|\__,_|\__|_|\___/|_| |_|___/
---                                                       
+--
 DROP TABLE IF EXISTS Formations;
 
 CREATE TABLE Formations (
@@ -310,12 +252,12 @@ INSERT INTO Formations(id,libelle) VALUES
 (50,"Excel perfectionnement");
 
 
---  _____                          _   _                 ____                     
--- |  ___|__  _ __ _ __ ___   __ _| |_(_) ___  _ __  ___|  _ \ ___ _ __ ___  ___  
--- | |_ / _ \| '__| '_ ` _ \ / _` | __| |/ _ \| '_ \/ __| |_) / _ \ '__/ __|/ _ \ 
+--  _____                          _   _                 ____
+-- |  ___|__  _ __ _ __ ___   __ _| |_(_) ___  _ __  ___|  _ \ ___ _ __ ___  ___
+-- | |_ / _ \| '__| '_ ` _ \ / _` | __| |/ _ \| '_ \/ __| |_) / _ \ '__/ __|/ _ \
 -- |  _| (_) | |  | | | | | | (_| | |_| | (_) | | | \__ \  __/  __/ |  \__ \ (_) |
--- |_|  \___/|_|  |_| |_| |_|\__,_|\__|_|\___/|_| |_|___/_|   \___|_|  |___/\___/ 
---                                                                                
+-- |_|  \___/|_|  |_| |_| |_|\__,_|\__|_|\___/|_| |_|___/_|   \___|_|  |___/\___/
+--
 DROP TABLE IF EXISTS FormationsPersonnels;
 
 CREATE TABLE FormationsPersonnels (
@@ -677,55 +619,56 @@ INSERT INTO FormationsPersonnels(fk_id_formation,fk_id_personnel) VALUES
 (21,71),
 (24,71);
 
---   ____                           _                           
---  / ___|___  _ __ ___  _ __   ___| |_ ___ _ __   ___ ___  ___ 
+--   ____                           _
+--  / ___|___  _ __ ___  _ __   ___| |_ ___ _ __   ___ ___  ___
 -- | |   / _ \| '_ ` _ \| '_ \ / _ \ __/ _ \ '_ \ / __/ _ \/ __|
 -- | |__| (_) | | | | | | |_) |  __/ ||  __/ | | | (_|  __/\__ \
 --  \____\___/|_| |_| |_| .__/ \___|\__\___|_| |_|\___\___||___/
---                      |_|                                     
+--                      |_|
 DROP TABLE IF EXISTS Competences;
 
 CREATE TABLE Competences (
 	id INTEGER PRIMARY KEY,
-	libelle TEXT
+	libelle TEXT,
+	categorie TEXT
 );
 
-INSERT INTO Competences(id,libelle) VALUES
-	(1,"Autonomie"),
-	(2,"Adaptabilité"),
-	(3,"Persévérance"),
-	(4,"Empathie"),
-	(5,"Communication"),
-	(6,"Sens du relationnel"),
-	(7,"Respect des règles d’éthique"),
-	(8,"Organisation"),
-	(9,"Force de proposition"),
-	(10,"Rigueur"),
-	(11,"Négociation"),
-	(12,"Sens du relationnel et travail en équipe"),
-	(13,"Sens du travail en équipe"),
-	(14,"Respect des délais"),
-	(15,"Esprit d'analyse"),
-	(16,"Réactivité"),
-	(17,"Mobilité"),
-	(18,"Force de persuasion"),
-	(19,"Curiosité, créativité, innovation"),
-	(20,"Anticipation"),
-	(21,"Prise de décision"),
-	(22,"Capacité à motiver les équipes"),
-	(23,"Aptitudes à la délégation"),
-	(24,"Esprit de synthèse"),
-	(25,"Résistance au stress et à l'urgence"),
-	(26,"Diplomatie"),
-	(27,"Coordination de projets"),
-	(28,"Goût pour la transmission des savoirs");
+INSERT INTO Competences(id,libelle,categorie) VALUES
+	(1,"Autonomie","SF"),
+	(2,"Adaptabilité","S"),
+	(3,"Persévérance","SF"),
+	(4,"Empathie","S"),
+	(5,"Communication","SE"),
+	(6,"Sens du relationnel","SE"),
+	(7,"Respect des règles d’éthique","SF"),
+	(8,"Organisation","SE"),
+	(9,"Force de proposition","S"),
+	(10,"Rigueur","SF"),
+	(11,"Négociation","SE"),
+	(12,"Sens du relationnel et travail en équipe","SE"),
+	(13,"Sens du travail en équipe","SE"),
+	(14,"Respect des délais","S"),
+	(15,"Esprit d'analyse","SF"),
+	(16,"Réactivité","SE"),
+	(17,"Mobilité","SE"),
+	(18,"Force de persuasion","SE"),
+	(19,"Curiosité, créativité, innovation","SE"),
+	(20,"Anticipation","SE"),
+	(21,"Prise de décision","SE"),
+	(22,"Capacité à motiver les équipes","SF"),
+	(23,"Aptitudes à la délégation","S"),
+	(24,"Esprit de synthèse","SF"),
+	(25,"Résistance au stress et à l'urgence","S"),
+	(26,"Diplomatie","S"),
+	(27,"Coordination de projets","SF"),
+	(28,"Goût pour la transmission des savoirs","S");
 
---   ____                      _                  ____                     
---  / ___|___  _ __ ___  _ __ | |_ _ __   ___ ___|  _ \ ___ _ __ ___  ___  
--- | |   / _ \| '_ ` _ \| '_ \| __| '_ \ / __/ _ \ |_) / _ \ '__/ __|/ _ \ 
+--   ____                      _                  ____
+--  / ___|___  _ __ ___  _ __ | |_ _ __   ___ ___|  _ \ ___ _ __ ___  ___
+-- | |   / _ \| '_ ` _ \| '_ \| __| '_ \ / __/ _ \ |_) / _ \ '__/ __|/ _ \
 -- | |__| (_) | | | | | | |_) | |_| | | | (_|  __/  __/  __/ |  \__ \ (_) |
---  \____\___/|_| |_| |_| .__/ \__|_| |_|\___\___|_|   \___|_|  |___/\___/ 
---                      |_|                                                
+--  \____\___/|_| |_| |_| .__/ \__|_| |_|\___\___|_|   \___|_|  |___/\___/
+--                      |_|
 DROP TABLE IF EXISTS CompetencesPersonnels;
 
 CREATE TABLE CompetencesPersonnels (
@@ -2724,13 +2667,38 @@ INSERT INTO CompetencesPersonnels(fk_id_competence,fk_id_personnel,pourcentAcqui
 (27,71,55),
 (28,71,55);
 
+DROP TABLE IF EXISTS FichePoste;
 
---  _____         _       
--- |_   _|__  ___| |_ ___ 
+CREATE TABLE FichePoste (
+	fk_id_poste INTEGER,
+	fk_id_competence INTEGER,
+	pourcentage Integer,
+	obligatoire INTEGER
+);
+
+INSERT INTO FichePoste (fk_id_poste,fk_id_competence,pourcentage,obligatoire) VALUES
+(1,1,23,0),
+(1,16,70,1),
+(1,23,55,0),
+(2,1,30,0),
+(2,13,80,1),
+(3,2,20,0),
+(3,16,95,1),
+(4,20,12,0),
+(4,23,78,0),
+(4,12,87,1),
+(4,19,12,0),
+(5,9,19,1),
+(5,13,13,1),
+(5,14,90,0),
+(5,12,80,1);
+
+--  _____         _
+-- |_   _|__  ___| |_ ___
 --   | |/ _ \/ __| __/ __|
 --   | |  __/\__ \ |_\__ \
 --   |_|\___||___/\__|___/
--- 
+--
 
 select nom from Formations,FormationsPersonnels,Personnels
 where Formations.id = FormationsPersonnels.fk_id_formation
