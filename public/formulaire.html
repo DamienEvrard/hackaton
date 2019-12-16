@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="choisieCompetence" action="index.html" method="post">
+      <div class="form-example">
+        <label for="name">Competance n°1 : </label>
+        <input type="text" name="" id="cpt_1" required>
+      </div>
+      <div class="form-example">
+        <label for="name">Competance n°2 : </label>
+        <input type="text" name="" id="cpt_1" required>
+      </div>
+      <div class="form-example">
+        <label for="name">Competance n°3 : </label>
+        <input type="text" name="" id="cpt_1" required>
+      </div>
+
+    </form>
+  </body>
+  <script>
+    //either use jQuery or AngularJS...
+    $(document).ready(function() {
+      $.ajax({
+        method: 'GET',
+        url: 'affichecomp/',
+        dataType: 'json',
+        success: function(data) {
+          (data).forEach(function(d,i) {
+            $('#tabPersonnels_jQ').append('<tr ><td>'+d.emploi+'</td></tr>');
+          });
+        },
+        error: function(x, error) {
+          console.log(error);
+        }
+      });
+    });
+
+    var app = angular.module('gpecApp', []);
+
+    app.controller('controleur', function($scope, $http) {
+
+      $http.get('/personnels').then(function(response) {
+        $scope.personnels = response.data;
+      });
+
+    });
+
+  </script>
+</html>
