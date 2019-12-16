@@ -47,7 +47,7 @@
         dataType: 'json',
         success: function(data) {
           (data).forEach(function(d,i) {
-            $('.listeCompetence').append('<option values='+d.libelle+'>'+d.libelle+'</option>');
+            $('.listeCompetence').append('<option value='+d.libelle+'>'+d.libelle+'</option>');
           });
         },
         error: function(x, error) {
