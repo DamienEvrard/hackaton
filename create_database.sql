@@ -2,12 +2,12 @@
 --date: 9/12/2019
 --version: 1.0
 
---  ____                  _               
--- / ___|  ___ _ ____   _(_) ___ ___  ___ 
+--  ____                  _
+-- / ___|  ___ _ ____   _(_) ___ ___  ___
 -- \___ \ / _ \ '__\ \ / / |/ __/ _ \/ __|
 --  ___) |  __/ |   \ V /| | (_|  __/\__ \
 -- |____/ \___|_|    \_/ |_|\___\___||___/
--- 
+--
 DROP TABLE IF EXISTS Services;
 
 CREATE TABLE Services (
@@ -30,12 +30,12 @@ INSERT INTO Services(id,libelle) VALUES
 (11,"Finance"),
 (12,"Informatique");
 
---  ____                                      _     
--- |  _ \ ___ _ __ ___  ___  _ __  _ __   ___| |___ 
+--  ____                                      _
+-- |  _ \ ___ _ __ ___  ___  _ __  _ __   ___| |___
 -- | |_) / _ \ '__/ __|/ _ \| '_ \| '_ \ / _ \ / __|
 -- |  __/  __/ |  \__ \ (_) | | | | | | |  __/ \__ \
 -- |_|   \___|_|  |___/\___/|_| |_|_| |_|\___|_|___/
---                                                  
+--
 DROP TABLE IF EXISTS Personnels;
 
 CREATE TABLE Personnels (
@@ -92,7 +92,7 @@ INSERT INTO Personnels (
 	variable_annuel_brut_2019,
 	primes,
 	annee_dernier_entretien_professionnel,
-	annee_dernier_entretien_individuel) 
+	annee_dernier_entretien_individuel)
 VALUES
 (1,'DUMONT','Bernard','13 rue des Mésanges, 81000 Albi','Française','1969-01-12','M',0,'Chef d''équipe','6B',2,'1989-06-15','2031-12-28','','','','','','',24272,'',25000,'',5,2018,2019),
 (2,'ROY','Louis','8 rue de l''alouette, 81000 Albi','Française','1957-05-03','M',0,'Responsable production','8B',3,'1978-06-16','2020-04-17','','','','','','',40385,'',42000,'',5,2018,2019),
@@ -165,14 +165,14 @@ VALUES
 (69,'TALBOT','Henri','11 rue des Frères, 81000 Albi','Française','1970-10-07','M',1,'Directeur informatique','9A',4,'2010-08-22','2033-09-21','','','','','','',53398,'',55000,'',5,2018,2019),
 (70,'AUDEBERT','Pierre','13 rue Farceur, 81000 Albi','Française','1979-10-08','M',12,'Administrateur informatique','4C',69,'2009-08-23','2042-09-22','','','','','','',25243,'',26000,'',5,2018,2019),
 (71,'DARMON','Esteban','58 rue des Abricots, 812350 Gorges','Française','1988-10-09','M',12,'Développeur informatique','6A',69,'2014-08-24','2051-09-24','','','','','','',38889,'',42000,'',5,2018,2019);
-  
-  
---  _____                          _   _                 
--- |  ___|__  _ __ _ __ ___   __ _| |_(_) ___  _ __  ___ 
+
+
+--  _____                          _   _
+-- |  ___|__  _ __ _ __ ___   __ _| |_(_) ___  _ __  ___
 -- | |_ / _ \| '__| '_ ` _ \ / _` | __| |/ _ \| '_ \/ __|
 -- |  _| (_) | |  | | | | | | (_| | |_| | (_) | | | \__ \
 -- |_|  \___/|_|  |_| |_| |_|\__,_|\__|_|\___/|_| |_|___/
---                                                       
+--
 DROP TABLE IF EXISTS Formations;
 
 CREATE TABLE Formations (
@@ -233,12 +233,12 @@ INSERT INTO Formations(id,libelle) VALUES
 (50,"Excel perfectionnement");
 
 
---  _____                          _   _                 ____                     
--- |  ___|__  _ __ _ __ ___   __ _| |_(_) ___  _ __  ___|  _ \ ___ _ __ ___  ___  
--- | |_ / _ \| '__| '_ ` _ \ / _` | __| |/ _ \| '_ \/ __| |_) / _ \ '__/ __|/ _ \ 
+--  _____                          _   _                 ____
+-- |  ___|__  _ __ _ __ ___   __ _| |_(_) ___  _ __  ___|  _ \ ___ _ __ ___  ___
+-- | |_ / _ \| '__| '_ ` _ \ / _` | __| |/ _ \| '_ \/ __| |_) / _ \ '__/ __|/ _ \
 -- |  _| (_) | |  | | | | | | (_| | |_| | (_) | | | \__ \  __/  __/ |  \__ \ (_) |
--- |_|  \___/|_|  |_| |_| |_|\__,_|\__|_|\___/|_| |_|___/_|   \___|_|  |___/\___/ 
---                                                                                
+-- |_|  \___/|_|  |_| |_| |_|\__,_|\__|_|\___/|_| |_|___/_|   \___|_|  |___/\___/
+--
 DROP TABLE IF EXISTS FormationsPersonnels;
 
 CREATE TABLE FormationsPersonnels (
@@ -600,12 +600,12 @@ INSERT INTO FormationsPersonnels(fk_id_formation,fk_id_personnel) VALUES
 (21,71),
 (24,71);
 
---   ____                           _                           
---  / ___|___  _ __ ___  _ __   ___| |_ ___ _ __   ___ ___  ___ 
+--   ____                           _
+--  / ___|___  _ __ ___  _ __   ___| |_ ___ _ __   ___ ___  ___
 -- | |   / _ \| '_ ` _ \| '_ \ / _ \ __/ _ \ '_ \ / __/ _ \/ __|
 -- | |__| (_) | | | | | | |_) |  __/ ||  __/ | | | (_|  __/\__ \
 --  \____\___/|_| |_| |_| .__/ \___|\__\___|_| |_|\___\___||___/
---                      |_|                                     
+--                      |_|
 DROP TABLE IF EXISTS Competences;
 
 CREATE TABLE Competences (
@@ -643,12 +643,12 @@ INSERT INTO Competences(id,libelle) VALUES
 	(27,"Coordination de projets"),
 	(28,"Goût pour la transmission des savoirs");
 
---   ____                      _                  ____                     
---  / ___|___  _ __ ___  _ __ | |_ _ __   ___ ___|  _ \ ___ _ __ ___  ___  
--- | |   / _ \| '_ ` _ \| '_ \| __| '_ \ / __/ _ \ |_) / _ \ '__/ __|/ _ \ 
+--   ____                      _                  ____
+--  / ___|___  _ __ ___  _ __ | |_ _ __   ___ ___|  _ \ ___ _ __ ___  ___
+-- | |   / _ \| '_ ` _ \| '_ \| __| '_ \ / __/ _ \ |_) / _ \ '__/ __|/ _ \
 -- | |__| (_) | | | | | | |_) | |_| | | | (_|  __/  __/  __/ |  \__ \ (_) |
---  \____\___/|_| |_| |_| .__/ \__|_| |_|\___\___|_|   \___|_|  |___/\___/ 
---                      |_|                                                
+--  \____\___/|_| |_| |_| .__/ \__|_| |_|\___\___|_|   \___|_|  |___/\___/
+--                      |_|
 DROP TABLE IF EXISTS CompetencesPersonnels;
 
 CREATE TABLE CompetencesPersonnels (
@@ -2648,12 +2648,12 @@ INSERT INTO CompetencesPersonnels(fk_id_competence,fk_id_personnel,pourcentAcqui
 (28,71,55);
 
 
---  _____         _       
--- |_   _|__  ___| |_ ___ 
+--  _____         _
+-- |_   _|__  ___| |_ ___
 --   | |/ _ \/ __| __/ __|
 --   | |  __/\__ \ |_\__ \
 --   |_|\___||___/\__|___/
--- 
+--
 
 select nom from Formations,FormationsPersonnels,Personnels
 where Formations.id = FormationsPersonnels.fk_id_formation

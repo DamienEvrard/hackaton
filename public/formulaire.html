@@ -9,7 +9,7 @@
     <form class="choisieCompetence" action="/qualifie" method="post">
       <div class="form-example">
         <label for="name">Competance n°1 : </label>
-        <select id="comp1" name="competences" class="listeCompetence">
+        <select id="comp1" name="comp1" class="listeCompetence">
 
         </select>
         <label for="name">Niveau : </label>
@@ -18,7 +18,7 @@
       </div>
       <div class="form-example">
         <label for="name">Competance n°2 : </label>
-        <select  id="comp2" name="competences" class="listeCompetence">
+        <select  id="comp2" name="comp2" class="listeCompetence">
 
         </select>
         <label for="name">Niveau : </label>
@@ -26,7 +26,7 @@
       </div>
       <div class="form-example">
         <label for="name">Competance n°3 : </label>
-        <select id="comp3" name="competences" class="listeCompetence">
+        <select id="comp3" name="comp3" class="listeCompetence">
 
         </select>
         <label for="name">Niveau : </label>
@@ -47,7 +47,7 @@
         dataType: 'json',
         success: function(data) {
           (data).forEach(function(d,i) {
-            $('.listeCompetence').append('<option values='+d.libelle+'>'+d.libelle+'</option>');
+            $('.listeCompetence').append('<option value='+d.libelle+'>'+d.libelle+'</option>');
           });
         },
         error: function(x, error) {
