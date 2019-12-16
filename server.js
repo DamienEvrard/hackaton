@@ -31,7 +31,8 @@ app.get('/personnels', function(req, res) {
 	});
 });
 
-app.get('/personnels', function(req, res) {
+app.post('/qualifie', function(req, res) {
+	req.body.comp1
 
 	let sql = 'SELECT * FROM Personnels';
 	db.all(sql, [], (err, rows) => {
