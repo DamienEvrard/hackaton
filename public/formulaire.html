@@ -2,35 +2,52 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <script src="/packages/jquery/dist/jquery.min.js"></script>
     <title></title>
   </head>
   <body>
-    <form class="choisieCompetence" action="index.html" method="post">
+    <form id="choisieCompetence" action="/qualifie" method="post">
       <div class="form-example">
         <label for="name">Competance n°1 : </label>
-        <input type="text" name="" id="comp1" required>
+
+        <select id="comp1" name="comp1" class="listeCompetence">
+
+        </select>
+        <label for="name">Niveau : </label>
+        <input type="text" id ="val1" name="val1" value="">
+
       </div>
       <div class="form-example">
         <label for="name">Competance n°2 : </label>
-        <input type="text" name="" id="comp2" required>
+        <select  id="comp2" name="comp2" class="listeCompetence">
+
+        </select>
+        <label for="name">Niveau : </label>
+        <input type="text" id ="val2" name="val2" value="">
       </div>
       <div class="form-example">
         <label for="name">Competance n°3 : </label>
-        <input type="text" name="" id="comp3" required>
-      </div>
+        <select id="comp3" name="comp3" class="listeCompetence">
 
+        </select>
+        <label for="name">Niveau : </label>
+        <input type="text" id ="val3" name="val3" value="">
+      </div>
+      <button type="submit" name="button">Valide</button>
     </form>
   </body>
   <script>
+
+
     //either use jQuery or AngularJS...
     $(document).ready(function() {
       $.ajax({
         method: 'GET',
-        url: 'affichecomp/',
+        url: 'competences/',
         dataType: 'json',
         success: function(data) {
           (data).forEach(function(d,i) {
-            $('#tabPersonnels_jQ').append('<tr ><td>'+d.emploi+'</td></tr>');
+            $('.listeCompetence').append('<option values='+d.libelle+'>'+d.libelle+'</option>');
           });
         },
         error: function(x, error) {
@@ -39,15 +56,24 @@
       });
     });
 
-    var app = angular.module('gpecApp', []);
-
-    app.controller('controleur', function($scope, $http) {
-
-      $http.get('/personnels').then(function(response) {
-        $scope.personnels = response.data;
+    $("#choisieCompetence").submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+        method: 'GET',
+        url: 'competences/',
+        dataType: 'json',
+        success: function(data) {
+          (data).forEach(function(d,i) {
+            $('.listeCompetence').append('<option values='+d.libelle+'>'+d.libelle+'</option>');
+          });
+        },
+        error: function(x, error) {
+          console.log(error);
+        }
       });
-
     });
+
+
 
   </script>
 </html>

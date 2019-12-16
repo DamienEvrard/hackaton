@@ -32,6 +32,7 @@ app.get('/personnels', function(req, res) {
 });
 
 app.post('/qualifie', function(req, res) {
+
 	comp1 = req.body.comp1;
 	comp2 = req.body.comp2;
 	comp3 = req.body.comp3;
@@ -42,7 +43,7 @@ app.post('/qualifie', function(req, res) {
 	requete=""
 
 	if(comp1!=null){
-		requete+="C.competence ="+comp1
+		requete+="and C.competence ="+comp1
 	}
 	if(comp2!=null){
 		requete+=", and C.competence ="+comp2
@@ -60,7 +61,10 @@ app.post('/qualifie', function(req, res) {
 		requete+=", and CP.pourcentAcquis ="+val3
 	}
 
-	let sql = 'SELECT * FROM Personnels P, Competences C, CompetencesPersonnels CP where P.id=CP.fk_id_personnel and CP.fk_id_competence=C.id and '+requete;
+
+
+	let sql = 'SELECT * FROM Personnels P, Competences C, CompetencesPersonnels CP where P.id=CP.fk_id_personnel and CP.fk_id_competence=C.id '+requete;
+	
 	db.all(sql, [], (err, rows) => {
 		if (err) {
 			throw err;
