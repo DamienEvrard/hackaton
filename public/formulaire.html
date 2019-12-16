@@ -6,35 +6,21 @@
     <title></title>
   </head>
   <body>
-    <form id="choisieCompetence" action="/qualifie" method="post">
-      <div class="form-example">
-        <label for="name">Competance n°1 : </label>
+    <form id="choixPoste" action="/qualifie" method="post">
+      <label>Poste: </label>
+      <select  id="postList" name="postList" class="listePost"></select>
 
-        <select id="comp1" name="comp1" class="listeCompetence">
-
-        </select>
-        <label for="name">Niveau : </label>
-        <input type="text" id ="val1" name="val1" value="">
-
-      </div>
-      <div class="form-example">
-        <label for="name">Competance n°2 : </label>
-        <select  id="comp2" name="comp2" class="listeCompetence">
-
-        </select>
-        <label for="name">Niveau : </label>
-        <input type="text" id ="val2" name="val2" value="">
-      </div>
-      <div class="form-example">
-        <label for="name">Competance n°3 : </label>
-        <select id="comp3" name="comp3" class="listeCompetence">
-
-        </select>
-        <label for="name">Niveau : </label>
-        <input type="text" id ="val3" name="val3" value="">
-      </div>
-      <button type="submit" name="button">Valide</button>
+      <button type="submit" name="button">Rechercher</button>
     </form>
+
+    <br>
+
+    <table border="1" id="listeOK">
+      <tr><td>Nom</td><td>Niveau Savoir</td><td>Niveau Savoir Faire</td><td>Niveau Savoir Etre</td><td>Moyenne</td></tr>
+
+    </table>
+
+
   </body>
   <script>
 
@@ -43,11 +29,11 @@
     $(document).ready(function() {
       $.ajax({
         method: 'GET',
-        url: 'competences/',
+        url: 'allPoste/',
         dataType: 'json',
         success: function(data) {
           (data).forEach(function(d,i) {
-            $('.listeCompetence').append('<option value='+d.libelle+'>'+d.libelle+'</option>');
+            $('.listePost').append('<option value='+d.libelle+'>'+d.libelle+'</option>');
           });
         },
         error: function(x, error) {
@@ -56,15 +42,15 @@
       });
     });
 
-    $("#choisieCompetence").submit(function(e) {
+    $("#choixPoste").submit(function(e) {
       e.preventDefault();
       $.ajax({
         method: 'GET',
-        url: 'competences/',
+        url: 'personnelsOK/',
         dataType: 'json',
         success: function(data) {
           (data).forEach(function(d,i) {
-            $('.listeCompetence').append('<option values='+d.libelle+'>'+d.libelle+'</option>');
+            $('#listeOK').append('<tr><td>'+d.nom+'</td><td>'+1+'</td><td>'+1+'</td><td>'+1+'</td><td>'+1+'</td>');
           });
         },
         error: function(x, error) {
