@@ -66,10 +66,14 @@ app.get('/allPoste', function(req, res) {
 
 
 app.get('/personnelsOK', function(req, res) {
-	let sql = 'SELECT * FROM (Personnels inner join CompetencesPersonnels on Personnels.id=CompetencesPersonnels.fk_id_personnel) inner join Competences on Competences.id=CompetencesPersonnels.fk_id_competence Where Personnels.prenoms="Bernard"  ';
+	let sql1 = 'SELECT * FROM (Personnels inner join CompetencesPersonnels on Personnels.id=CompetencesPersonnels.fk_id_personnel) inner join Competences on Competences.id=CompetencesPersonnels.fk_id_competence Where Personnels.prenoms="Bernard"  ';
 	let sql2='SELECT * FROM (Postes inner join FichePoste on Postes.id=FichePoste.fk_id_poste) inner join Competences on Competences.id=FichePoste.fk_id_competence ';
+	
+	id=req.query.id;
+	let sql ='select * from Personnels where (select C.libelles from Personnels Pers, CompetencesPersonnels CP, Competences C where Pers.id=CP.fk_id_personnel and CP.fk_id_competence=C.id) in (select C.libelles from Postes P, FichePoste FP, Competences C where P.id=FP.fk_id_poste and fk_id_competence=C.id and P.libelle='+id+')';
+	let test = 'select C.libelles from Postes P, FichePoste FP, Competences C where P.id=FP.fk_id_poste and fk_id_competence=C.id and P.libelle='+id;
 
-	db.all(sql, [], (err, rows) => {
+	db.all(test, [], (err, rows) => {
 		if (err) {
 			throw err;
 		}

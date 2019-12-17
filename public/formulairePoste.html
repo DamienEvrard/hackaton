@@ -34,8 +34,9 @@
         url: 'allPoste/',
         dataType: 'json',
         success: function(data) {
+          console.log(data)
           (data).forEach(function(d,i) {
-            $('.listePost').append('<option value='+d.libelle+'>'+d.libelle+'</option>');
+            $('.listePost').append('<option value='+d.id+'>'+d.libelle+'</option>');
           });
         },
         error: function(x, error) {
@@ -46,9 +47,13 @@
 
     $("#choixPoste").submit(function(e) {
       e.preventDefault();
+      var e = document.getElementById("postList");
+      var id = e.options[e.selectedIndex].value;
+
       $.ajax({
         method: 'GET',
         url: 'personnelsOK/',
+        data: {id:id},
         dataType: 'json',
         success: function(data) {
           (data).forEach(function(d,i) {
