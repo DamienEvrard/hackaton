@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="/packages/jquery/dist/jquery.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <form id="choixPoste" action="/qualifie" method="post">
+      <label>Poste: </label>
+      <select  id="postList" name="postList" class="listePost"></select>
+
+      <button type="submit" name="button">Rechercher</button>
+    </form>
+
+    <br>
+
+    <table border="1" id="listeOK">
+      <tr><td>Nom</td><td>Niveau Savoir</td><td>Niveau Savoir Faire</td><td>Niveau Savoir Etre</td><td>Moyenne</td></tr>
+
+    </table>
+
+
+  </body>
+  <script>
+
+
+    //either use jQuery or AngularJS...
+    $(document).ready(function() {
+      $.ajax({
+        method: 'GET',
+        url: 'allPoste/',
+        dataType: 'json',
+        success: function(data) {
+          (data).forEach(function(d,i) {
+            $('.listePost').append('<option value='+d.libelle+'>'+d.libelle+'</option>');
+          });
+        },
+        error: function(x, error) {
+          console.log(error);
+        }
+      });
+    });
+
+    $("#choixPoste").submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+        method: 'GET',
+        url: 'personnelsOK/',
+        dataType: 'json',
+        success: function(data) {
+          (data).forEach(function(d,i) {
+            $('#listeOK').append('<tr><td>'+d.nom+'</td><td>'+1+'</td><td>'+1+'</td><td>'+1+'</td><td>'+1+'</td></tr>');
+          });
+        },
+        error: function(x, error) {
+          console.log(error);
+        }
+      });
+    });
+
+
+
+  </script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="/packages/jquery/dist/jquery.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <form id="choixPersonnels" action="/qualifie" method="post">
+      <label>Employé: </label>
+      <select  id="postList" name="postList" class="listePersonnels"></select>
+
+      <button type="submit" name="button">Rechercher</button>
+    </form>
+
+    <br>
+
+    <table border="1" id="listeOK">
+      <tr><td>Nom du poste</td></tr>
+
+    </table>
+
+
+  </body>
+  <script>
+
+
+    //either use jQuery or AngularJS...
+    $(document).ready(function() {
+      $.ajax({
+        method: 'GET',
+        url: 'personnels/',
+        dataType: 'json',
+        success: function(data) {
+          (data).forEach(function(d,i) {
+            $('.listePersonnels').append('<option value='+d.nom+'>'+d.nom+'</option>');
+          });
+        },
+        error: function(x, error) {
+          console.log(error);
+        }
+      });
+    });
+
+    $("#choixPersonnels").submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+        method: 'GET',
+        url: 'posteOK/',
+        dataType: 'json',
+        success: function(data) {
+          (data).forEach(function(d,i) {
+            $('#listeOK').append('<tr><td>'+d.libelle+'</td></tr>');
+          });
+        },
+        error: function(x, error) {
+          console.log(error);
+        }
+      });
+    });
+
+
+
+  </script>
+</html>
