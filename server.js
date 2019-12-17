@@ -31,6 +31,17 @@ app.get('/personnels', function(req, res) {
 	});
 });
 
+app.get('/getPersonnel', function(req, res) {
+	id=req.query.id;
+	let sql = 'SELECT * FROM Personnels P, Competences C, CompetencesPersonnels CP where P.id=CP.fk_id_personnel and  and P.id='+id;
+	db.all(sql, [], (err, rows) => {
+		if (err) {
+			throw err;
+		}
+		res.send(rows);
+	});
+});
+
 app.get('/allPoste', function(req, res) {
 	let sql = 'SELECT * FROM Postes';
 	
