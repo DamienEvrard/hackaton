@@ -33,7 +33,18 @@ app.get('/personnels', function(req, res) {
 
 app.get('/getPersonnel', function(req, res) {
 	id=req.query.id;
-	let sql = 'SELECT * FROM Personnels P, Competences C, CompetencesPersonnels CP where P.id=CP.fk_id_personnel and  and P.id='+id;
+	let sql = 'SELECT * FROM Personnels where id='+id;
+	db.all(sql, [], (err, rows) => {
+		if (err) {
+			throw err;
+		}
+		res.send(rows);
+	});
+});
+
+app.get('/getCompPersonnel', function(req, res) {
+	id=req.query.id;
+	let sql = 'SELECT C.libelles as libelle, CP.pourcentAcquis as niveau FROM Personnels P, Competences C, CompetencesPersonnels CP where P.id=CP.fk_id_personnel and fk_id_competence=C.id and P.id='+id;
 	db.all(sql, [], (err, rows) => {
 		if (err) {
 			throw err;
@@ -77,7 +88,7 @@ app.get('/posteOK', function(req, res) {
 	});
 });
 
-var port = 8030;
+var port = 8080;
 var server = app.listen(port, function(){
   console.log('listening on *:'+port);
 });
