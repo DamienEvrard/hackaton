@@ -33,7 +33,7 @@ app.get('/personnels', function(req, res) {
 
 app.get('/allPoste', function(req, res) {
 	let sql = 'SELECT * FROM Postes';
-	
+
 	db.all(sql, [], (err, rows) => {
 		if (err) {
 			throw err;
@@ -44,8 +44,9 @@ app.get('/allPoste', function(req, res) {
 
 
 app.get('/personnelsOK', function(req, res) {
-	let sql = 'SELECT * FROM Personnels';
-	
+	let sql = 'SELECT * FROM (Personnels inner join CompetencesPersonnels on Personnels.id=CompetencesPersonnels.fk_id_personnel) inner join Competences on Competences.id=CompetencesPersonnels.fk_id_competence Where Personnels.prenoms="Bernard"  ';
+	let sql2='SELECT * FROM (Postes inner join FichePoste on Postes.id=FichePoste.fk_id_poste) inner join Competences on Competences.id=FichePoste.fk_id_competence ';
+
 	db.all(sql, [], (err, rows) => {
 		if (err) {
 			throw err;
@@ -56,7 +57,7 @@ app.get('/personnelsOK', function(req, res) {
 
 app.get('/posteOK', function(req, res) {
 	let sql = 'SELECT * FROM Postes';
-	
+
 	db.all(sql, [], (err, rows) => {
 		if (err) {
 			throw err;
@@ -65,7 +66,7 @@ app.get('/posteOK', function(req, res) {
 	});
 });
 
-var port = 8080;
+var port = 8030;
 var server = app.listen(port, function(){
   console.log('listening on *:'+port);
 });
