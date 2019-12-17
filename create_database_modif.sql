@@ -31,10 +31,10 @@ DROP TABLE IF EXISTS Services;
 
 CREATE TABLE Services (
 	id INTEGER PRIMARY KEY,
-	libelle TEXT
+	libele TEXT
 );
 
-INSERT INTO Services(id,libelle) VALUES
+INSERT INTO Services(id,libele) VALUES
 (0,"Fabrication conditionnement"),
 (1,"Direction"),
 (2,"Administration"),
@@ -196,10 +196,10 @@ DROP TABLE IF EXISTS Formations;
 
 CREATE TABLE Formations (
 	id INTEGER PRIMARY KEY,
-	libelle TEXT
+	libel TEXT
 );
 
-INSERT INTO Formations(id,libelle) VALUES
+INSERT INTO Formations(id,libel) VALUES
 (1,"Mettre au point une méthode analytique"),
 (2,"Appliquer les bonnes pratiques de laboratoire dans son champ d’activité"),
 (3,"Préparer la validation d'une méthode analytique"),
@@ -629,11 +629,11 @@ DROP TABLE IF EXISTS Competences;
 
 CREATE TABLE Competences (
 	id INTEGER PRIMARY KEY,
-	libelle TEXT,
+	libelles TEXT,
 	categorie TEXT
 );
 
-INSERT INTO Competences(id,libelle,categorie) VALUES
+INSERT INTO Competences(id,libelles,categorie) VALUES
 	(1,"Autonomie","SF"),
 	(2,"Adaptabilité","S"),
 	(3,"Persévérance","SF"),
@@ -2703,10 +2703,10 @@ INSERT INTO FichePoste (fk_id_poste,fk_id_competence,pourcentage,obligatoire) VA
 select nom from Formations,FormationsPersonnels,Personnels
 where Formations.id = FormationsPersonnels.fk_id_formation
 and Personnels.id = FormationsPersonnels.fk_id_personnel
-and Formations.libelle = "Mettre au point une méthode analytique";
+and Formations.libel = "Mettre au point une méthode analytique";
 
-select Personnels.nom,Competences.libelle,pourcentAcquis from CompetencesPersonnels,Personnels,Competences
+select Personnels.nom,Competences.libelles,pourcentAcquis from CompetencesPersonnels,Personnels,Competences
 where CompetencesPersonnels.fk_id_competence = Competences.id
 and CompetencesPersonnels.fk_id_personnel = Personnels.id
 and Personnels.nom = "JAMON"
-and Competences.libelle = "Force de proposition";
+and Competences.libelles = "Force de proposition";
