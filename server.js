@@ -71,13 +71,28 @@ app.get('/personnelsOK', function(req, res) {
 
 	id=req.query.id;
 	let sql ='select * from Personnels where (select C.libelles from Personnels Pers, CompetencesPersonnels CP, Competences C where Pers.id=CP.fk_id_personnel and CP.fk_id_competence=C.id) in (select C.libelles from Postes P, FichePoste FP, Competences C where P.id=FP.fk_id_poste and fk_id_competence=C.id and P.libelle='+id+')';
-	let test = 'select C.libelles from Postes P, FichePoste FP, Competences C where P.id=FP.fk_id_poste and fk_id_competence=C.id and P.libelle='+id;
 
+
+
+	let test = 'select C.id, FP.pourcentage from Postes P, FichePoste FP, Competences C where P.id=FP.fk_id_poste and fk_id_competence=C.id and P.id='+id;
+	let test2 = 'select P.id as idPers, C.id, CP.pourcentAcquis from Personnels P, CompetencesPersonnels CP, Competences C where P.id=CP.fk_id_personnel and CP.fk_id_competence=C.id';
+	let results=[];
 	db.all(test, [], (err, rows) => {
 		if (err) {
 			throw err;
+		} 
+		results.push(rows);
+	});
+
+	
+
+	db.all(test2, [], (err, rows) => {
+		if (err) {
+			throw err;
 		}
-		res.send(rows);
+		results.push(rows);
+
+		res.send(results);
 	});
 });
 

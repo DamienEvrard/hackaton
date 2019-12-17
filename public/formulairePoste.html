@@ -44,7 +44,11 @@
         url: 'allPoste/',
         dataType: 'json',
         success: function(data) {
+<<<<<<< HEAD
 
+=======
+          
+>>>>>>> refs/remotes/origin/master
           (data).forEach(function(d,i) {
             console.log(d.id);
             console.log(d.libelle);
@@ -69,10 +73,43 @@
         data: {id:id},
         dataType: 'json',
         success: function(data) {
+<<<<<<< HEAD
           (data).forEach(function(d,i) {
 
             $('#listeOK').append('<tr><td>'+d.nom+'</td><td>'+1+'</td><td>'+1+'</td><td>'+1+'</td><td>'+1+'</td><td><a href="detailsPersonnel.html?id='+d.id+'">Voir plus</a></td></tr>');
+=======
+          console.log(data);
+
+          poste=data[0];
+          pers=data[1];
+
+          let competencesOK = [];
+
+
+          (pers).forEach(function(d,i) {
+
+
+            poste.forEach(function(p,i) {
+                if(d.id == p.id && d.pourcentAcquis > p.pourcentage) {
+                  competencesOK.push(d);
+                }
+            });
           });
+
+          console.log(competencesOK);
+
+          let personne=[];
+
+          (competencesOK).forEach(function(d,i) {
+
+            (competencesOK).forEach(function(d,i) {
+              personne[d.idPers]+=1;
+
+            });
+>>>>>>> refs/remotes/origin/master
+          });
+          console.log(personne)
+          // $('#listeOK').append('<tr><td>'+d.nom+'</td><td>'+1+'</td><td>'+1+'</td><td>'+1+'</td><td>'+1+'</td><td><a href="detailsPersonnel.html?id='+d.id+'">Voir plus</a></td></tr>');
         },
         error: function(x, error) {
           console.log(error);
